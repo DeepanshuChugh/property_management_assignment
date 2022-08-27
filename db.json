@@ -1,0 +1,38 @@
+{
+  "propertiess": [
+    {
+      "id": 2,
+      "name": "Shaan Villa",
+      "description": "A beautiful Villa",
+      "size": "23"
+    },
+    {
+      "id": 3,
+      "name": "Shaan Villa",
+      "description": "A beautiful Villa",
+      "size": "23"
+    },
+    {
+      "id": 4,
+      "name": "Shaan Villa",
+      "description": "A beautiful Villa",
+      "size": "23"
+    },
+    {
+      "id": 5,
+      "name": "Shaan Villa",
+      "description": "A beautiful Villa",
+      "size": "23"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+import axios from "axios";
+import { useEffect, useState } from "react";
+import AddModal from "./components/Modal";
+import PropertyList from "./pages/PropertyList";
+import "./App.css";
 function App() {
+  const [propertyData, setPropertyData] = useState([]);
+
+  // Geetting Data
+  const getData = async () => {
+    let r = await axios.get("http://localhost:8080/propertiess");
+    console.log(r.data);
+    setPropertyData(r.data);
+  };
+
+  // Calling Function to getdata
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AddModal getData={getData} />
+      <PropertyList
+        propertyData={propertyData}
+        getData={getData}
+        setPropertyData={setPropertyData}
+      />
     </div>
   );
 }

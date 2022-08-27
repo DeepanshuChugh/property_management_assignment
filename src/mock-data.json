@@ -1,0 +1,28 @@
+{
+  "propertiess": [
+    {
+      "id": 2,
+      "name": "Shaan Villa",
+      "description": "A beautiful Villa",
+      "size": "23"
+    },
+    {
+      "id": 3,
+      "name": "Shaan Villa",
+      "description": "A beautiful Villa",
+      "size": "23"
+    },
+    {
+      "id": 4,
+      "name": "Shaan Villa",
+      "description": "A beautiful Villa",
+      "size": "23"
+    },
+    {
+      "id": 5,
+      "name": "Shaan Villa",
+      "description": "A beautiful Villa",
+      "size": "23"
+    }
+  ]
+}
