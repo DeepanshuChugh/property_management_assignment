@@ -31,11 +31,14 @@ export default function AddModal({ getData }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (form.name && form.description && form.size) {
-      await axios.post("http://localhost:8080/propertiess", {
-        name: form.name,
-        description: form.description,
-        size: form.size,
-      });
+      await axios.post(
+        "https://agile-inlet-56926.herokuapp.com/properties/create",
+        {
+          name: form.name,
+          description: form.description,
+          size: form.size,
+        }
+      );
       setForm({ name: "", description: "", size: "" });
       getData();
       toggleModal();

@@ -6,7 +6,9 @@ const PropertyList = ({ propertyData, getData, setPropertyData }) => {
   // Deleting Data
   console.log("k", propertyData);
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:8080/propertiess/${id}`);
+    await axios.delete(
+      `https://agile-inlet-56926.herokuapp.com/properties/${id}`
+    );
     getData();
   };
   // const handleSort = async () => {
@@ -36,33 +38,21 @@ const PropertyList = ({ propertyData, getData, setPropertyData }) => {
             </th> */}
           </tr>
         </thead>
-        {propertyData.length !== 0 ? (
-          propertyData.map((item) => {
-            return (
-              <tbody key={item.id}>
-                <tr>
-                  <td>{item.name}</td>
-                  <td>{item.description}</td>
-                  <td>{item.size}</td>
-                  <td>
-                    <button onClick={() => handleDelete(item.id)}>
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            );
-          })
-        ) : (
-          <>
-            <h3>
-              Please Start the server before adding any data or to show
-              exsisting data in DB
-            </h3>
-            <h3>To Start the server run the following command in terminal</h3>
-            <h2>json-server --watch db.json --port 8080</h2>
-          </>
-        )}
+
+        {propertyData.map((item) => {
+          return (
+            <tbody key={item.id}>
+              <tr>
+                <td>{item.name}</td>
+                <td>{item.description}</td>
+                <td>{item.size}</td>
+                <td>
+                  <button onClick={() => handleDelete(item._id)}>Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          );
+        })}
       </table>
     </div>
   );

@@ -8,9 +8,11 @@ function App() {
 
   // Geetting Data
   const getData = async () => {
-    let r = await axios.get("http://localhost:8080/propertiess");
-    console.log(r.data);
-    setPropertyData(r.data);
+    let r = await axios.get(
+      "https://agile-inlet-56926.herokuapp.com/properties/all"
+    );
+    console.log("data", r.data.data);
+    setPropertyData(r.data.data);
   };
 
   // Calling Function to getdata
